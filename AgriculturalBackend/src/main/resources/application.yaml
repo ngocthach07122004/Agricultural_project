@@ -1,1 +1,10 @@
-spring.application.name=Agricultural 
+server:
+  port: 8080
+spring:
+  application:
+    name: agricultural-service
+  datasource:
+    url: "jdbc:mysql://localhost:3312/agricultural_database"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: 12345678
