@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: agricultural-service
@@ -8,3 +8,7 @@ spring:
     driverClassName: "com.mysql.cj.jdbc.Driver"
     username: root
     password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

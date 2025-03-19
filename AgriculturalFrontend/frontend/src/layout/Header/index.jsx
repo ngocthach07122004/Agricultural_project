@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, ShoppingBag, User } from "lucide-react";
+import { Menu, User } from "lucide-react";
 
 import logoBK from "../../assets/HCMUT_official_logo.png";
 import tel from "../../assets/mainLogo.jpg";
@@ -26,7 +26,7 @@ const Header = () => {
   ];
 
   const userData = localStorage.getItem("userdata");
-  const username = userData ? JSON.parse(userData).username : "---";
+  // const username = userData ? JSON.parse(userData).username : "---";
 
   return (
     <>
@@ -100,14 +100,7 @@ const Header = () => {
                 <Link to="/profile">
                   <User />
                 </Link>
-                <Link to="/cart">
-                  <div className="nav-bag">
-                    <ShoppingBag className="bi bi-handbag-fill" size={24} />
-                    <span className="badge bg-danger rounded-pill bag-quantity">
-                      {/* <span>{cartItems.length}</span> */}
-                    </span>
-                  </div>
-                </Link>
+
                 {/* <BellNotification /> */}
                 <span className="text-danger">
                   <a
