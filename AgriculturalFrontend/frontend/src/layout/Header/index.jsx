@@ -1,32 +1,43 @@
-import React, { useState, useContext } from "react";
+// File: src/layout/Header/index.jsx
+
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, User } from "lucide-react";
 
+// Logo và ảnh minh họa (thay đường dẫn tùy theo dự án)
 import logoBK from "../../assets/HCMUT_official_logo.png";
 import tel from "../../assets/mainLogo.jpg";
 
-// import { CartContext } from "../../context/CartContext";
-// import BellNotification from "../../components/BellNotification";
+// Style cũ của bạn
 import "./styles.css";
+// SCSS module cho header
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
+
+// Kết hợp className module
 const cx = classNames.bind(styles);
+
 const Header = () => {
   const navigate = useNavigate();
-  // const { cartItems } = useContext(CartContext);
-  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
   const location = useLocation();
 
+  // State cho menu mobile
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+  // Lấy thông tin user từ localStorage (nếu có)
+  const userData = localStorage.getItem("userdata");
+  const isLoggedIn = localStorage.getItem("login") === "success";
+
+  // Mảng liên kết menu
+  // Đã thêm Dashboard & Settings
   const navLinks = [
     { path: "/", label: "TRANG CHỦ" },
     { path: "/about", label: "VỀ SMARTGROW" },
-    { path: "/menu", label: "THEO DÕI" },
-    { path: "/contact", label: "GHI CHÚ" },
+    { path: "/dashboard", label: "DASHBOARD" }, // Thêm
+    { path: "/schedule", label: "LÊN LỊCH" },
+    { path: "/settings", label: "CÀI ĐẶT" }, // Thêm
   ];
-
-  const userData = localStorage.getItem("userdata");
-  // const username = userData ? JSON.parse(userData).username : "---";
 
   return (
     <>
@@ -36,6 +47,7 @@ const Header = () => {
         style={{ background: "var(--primaryDeep_background)" }}
       >
         <div className="container d-flex justify-content-end py-2 gap-4">
+          {/* Chọn ngôn ngữ */}
           <div className="d-flex gap-3 align-items-center">
             <button
               className={cx("wrapper_language", "btn", "btn-link", "p-0")}
@@ -49,13 +61,17 @@ const Header = () => {
               EN
             </button>
           </div>
+
+          {/* Vị trí HỒ CHÍ MINH */}
           <div className="d-flex gap-3 align-items-center">
             <i className="bi bi-geo-alt-fill text-danger"></i>
             <span className={cx("wrapper_located")}>HỒ CHÍ MINH</span>
           </div>
+
+          {/* Đăng ký / Đăng nhập hoặc hiển thị user */}
           <div className="d-flex gap-3 align-items-center">
             <i className="bi bi-person-fill text-danger"></i>
-            {localStorage.getItem("login") !== "success" ? (
+            {!isLoggedIn ? (
               <span className="text-danger">
                 <a
                   onClick={() => navigate("signup")}
@@ -100,8 +116,6 @@ const Header = () => {
                 <Link to="/profile">
                   <User />
                 </Link>
-
-                {/* <BellNotification /> */}
                 <span className="text-danger">
                   <a
                     onClick={() => navigate("/profile")}
@@ -119,7 +133,7 @@ const Header = () => {
                       (e.currentTarget.style.textDecoration = "none")
                     }
                   >
-                    {localStorage.getItem("name")}
+                    {localStorage.getItem("name") || "User"}
                   </a>
                   /
                   <a
@@ -179,7 +193,6 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          {/* <div className={cx("wrapper_navBar navbar-collapse")}> */}
           <div
             className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
           >
@@ -198,13 +211,9 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          {/* </div> */}
 
-          {/* Right Side Buttons */}
+          {/* Right Side */}
           <div className="d-flex gap-3 align-items-center">
-            {/* <button className="btn btn-warning rounded-pill fw-bold px-4">
-              PICK UP
-            </button> */}
             <div className="d-none d-lg-flex align-items-center text-white">
               <img src={tel} alt="BK-HCMUT" height="80" />
             </div>

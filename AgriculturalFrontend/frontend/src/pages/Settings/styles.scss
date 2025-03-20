@@ -1,0 +1,23 @@
+.settings-page {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+
+  h2 {
+    color: #2e7d32;
+  }
+
+  .device-card {
+    border-radius: 10px;
+    .form-check-input {
+      cursor: pointer;
+    }
+  }
+
+  .timer-card {
+    border-radius: 10px;
+  }
+
+  .form-range {
+    cursor: pointer;
+  }
+}

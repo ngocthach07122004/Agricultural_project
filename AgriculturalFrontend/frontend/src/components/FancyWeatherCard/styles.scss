@@ -1,0 +1,89 @@
+.fancy-weather-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* canh giữa */
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://images.unsplash.com/photo-1615193807354-bf2df2292fa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1280&q=80")
+      no-repeat center center;
+  background-size: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  .fwc-header {
+    text-align: center;
+    margin-bottom: 10px;
+
+    .fwc-city {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .fwc-status {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  }
+
+  .fwc-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+
+    .fwc-info-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 1.1rem;
+    }
+  }
+
+  .fwc-aqi {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .fwc-forecast {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 15px;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 4px;
+    }
+
+    .fwc-forecast-item {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      padding: 8px 12px;
+      text-align: center;
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.9rem;
+
+      .fwc-forecast-time {
+        font-weight: 500;
+      }
+      .fwc-forecast-icon {
+        color: #fff;
+      }
+      .fwc-forecast-temp {
+        font-weight: 600;
+      }
+    }
+  }
+}

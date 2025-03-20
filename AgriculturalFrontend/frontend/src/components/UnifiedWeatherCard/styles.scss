@@ -1,0 +1,52 @@
+.unified-weather-card {
+  border-radius: 10px;
+
+  .card-body {
+    padding: 1.25rem;
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .uwc-info {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+
+      .uwc-info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        font-size: 1rem;
+      }
+    }
+
+    .uwc-forecast {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+
+      .uwc-forecast-item {
+        background-color: #f7f7f7;
+        border-radius: 6px;
+        padding: 6px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        min-width: 60px;
+
+        .uwc-forecast-time {
+          font-weight: 500;
+        }
+        .uwc-forecast-temp {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
