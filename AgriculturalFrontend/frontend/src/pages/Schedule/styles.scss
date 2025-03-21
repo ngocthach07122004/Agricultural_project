@@ -1,0 +1,29 @@
+.schedule-page {
+  h2 {
+    color: #2e7d32;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  .form-label {
+    margin-bottom: 0.4rem;
+  }
+
+  .table {
+    border-radius: 10px;
+    thead {
+      th {
+        font-weight: 600;
+      }
+    }
+    tbody {
+      tr {
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}
