@@ -1,0 +1,53 @@
+.settings-page {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+
+  h2 {
+    color: #2e7d32;
+  }
+
+  .device-card {
+    border-radius: 10px;
+    .form-check-input {
+      cursor: pointer;
+    }
+  }
+
+  .timer-card {
+    border-radius: 10px;
+  }
+
+  .form-range {
+    cursor: pointer;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  .form-label {
+    margin-bottom: 0.4rem;
+  }
+  
+  .table-responsive{
+    max-height: 400px; 
+    overflow-y: auto;  
+    border: 1px solid #ddd;
+  }
+
+  .table {
+    border-radius: 10px;
+    thead {
+      th {
+        font-weight: 600;
+      }
+    }
+    tbody {
+      tr {
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}

@@ -16,7 +16,8 @@ const SettingsPage = () => {
   const [pumpLevel, setPumpLevel] = useState(5);
 
   const [lightOn, setLightOn] = useState(false);
-  const [lightLevel, setLightLevel] = useState(5);
+
+  const [lightLevel, setLightLevel] = useState(10);
 
   const [fanOn, setFanOn] = useState(false);
   const [fanLevel, setFanLevel] = useState(5);

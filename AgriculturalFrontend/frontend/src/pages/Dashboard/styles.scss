@@ -1,3 +1,42 @@
+// .dashboard {
+//   background-color: #f9f9f9;
+//   min-height: 100vh;
+
+//   .dashboard-title {
+//     color: #2e7d32;
+//     font-weight: 700;
+//   }
+//   .dashboard-subtitle {
+//     color: #666;
+//   }
+
+//   .card {
+//     border-radius: 12px;
+//     border: none;
+//   }
+
+//   .tree-card {
+//     background: linear-gradient(to right, #e8f5e9, #ffffff);
+//     .param-col {
+//       text-align: center;
+//       .param-icon {
+//         margin-bottom: 5px;
+//       }
+//       .param-text {
+//         font-size: 1.4rem;
+//         font-weight: 700;
+//         display: flex;
+//         align-items: baseline;
+//         justify-content: center;
+//         gap: 4px;
+//       }
+//       .param-label {
+//         color: #666;
+//         margin-top: 4px;
+//       }
+//     }
+//   }
+// }
 .dashboard {
   background-color: #f9f9f9;
   min-height: 100vh;
@@ -16,24 +55,42 @@
   }
 
   .tree-card {
-    background: linear-gradient(to right, #e8f5e9, #ffffff);
-    .param-col {
-      text-align: center;
-      .param-icon {
-        margin-bottom: 5px;
-      }
-      .param-text {
-        font-size: 1.4rem;
-        font-weight: 700;
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 4px;
-      }
-      .param-label {
-        color: #666;
-        margin-top: 4px;
-      }
+    background: linear-gradient(to top, #bdfcc2, #ffffff);
+  }
+
+  .param-col {
+    text-align: center;
+    .param-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  .weather-card-container {
+    flex: 1 1 calc(100% / 7); // Chia đều 7 thẻ trong 1 hàng
+    min-width: 120px; // Đảm bảo không quá nhỏ trên màn hình nhỏ
+  }
+
+  .weather-card {
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .weather-card-container {
+      flex: 1 1 33%; // 3 thẻ trên 1 hàng khi màn hình nhỏ
+    }
+  }
+
+  @media (max-width: 576px) {
+    .weather-card-container {
+      flex: 1 1 50%; // 2 thẻ trên 1 hàng khi màn hình rất nhỏ
     }
   }
 }

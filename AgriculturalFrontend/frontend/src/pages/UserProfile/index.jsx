@@ -28,7 +28,7 @@ const Profile = () => {
 
   const handleEditFormSubmit = async () => {
     try {
-      const url = `http://localhost:8081/user/update/${userData.idUser}`;
+      const url = `http://localhost:8080/user/update/${userData.idUser}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -41,7 +41,7 @@ const Profile = () => {
 
         // Optionally, you might want to refresh the user data
         const userResponse = await fetch(
-          `http://localhost:8081/user/${userData.idUser}`
+          `http://localhost:8080/user/${userData.idUser}`
         );
         const updatedUserData = await userResponse.json();
         setUserData(updatedUserData); // Update user data state
@@ -66,7 +66,7 @@ const Profile = () => {
   };
 
   // const handleFormSubmit = (values) => {
-  //   const url = "http://localhost:8081/donKhieuNai/create";
+  //   const url = "http://localhost:8080/donKhieuNai/create";
   //   fetch(url, {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" },
@@ -81,7 +81,7 @@ const Profile = () => {
 
   useEffect(() => {
     // Fetch users from API
-    const url = "http://localhost:8081/donMonAn/all";
+    const url = "http://localhost:8080/donMonAn/all";
     fetch(url, {
       method: "GET",
       headers: {
@@ -99,7 +99,7 @@ const Profile = () => {
 
   useEffect(() => {
     const idUser = localStorage.getItem("idUser");
-    const url = `http://localhost:8081/user/${idUser}`;
+    const url = `http://localhost:8080/user/${idUser}`;
     fetch(url, {
       method: "GET",
     })
