@@ -54,7 +54,7 @@ const Signup = () => {
       maTaiKhoan: "user",
     };
 
-    fetch("http://localhost:8081/user/create", {
+    fetch("http://localhost:8080/user/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
