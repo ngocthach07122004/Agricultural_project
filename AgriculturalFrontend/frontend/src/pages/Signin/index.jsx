@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 import { message } from "antd";
 import "antd/dist/reset.css";
-
+import farm2 from "../../assets/farm2.jpg";
 const Signin = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -54,7 +54,14 @@ const Signin = (props) => {
   };
 
   return (
-    <div className="container-fuild loginmainContainer">
+    <div
+      className="container-fluid loginmainContainer"
+      style={{
+        backgroundImage: `url(${farm2})`,
+        backgroundSize: "cover",
+        minHeight: "70vh",
+      }}
+    >
       <div className={"titleContainer"}>
         <div>Login</div>
       </div>
