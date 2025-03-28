@@ -264,7 +264,7 @@ const Header = () => {
     { path: "/", label: "TRANG CHỦ" },
     { path: "/about", label: "VỀ SMARTGROW" },
     { path: "/dashboard", label: "DASHBOARD" }, // Thêm
-    { path: "/schedule", label: "LÊN LỊCH" },
+    // { path: "/schedule", label: "LÊN LỊCH" },
     // { path: "/settings", label: "CÀI ĐẶT" }, // Thêm
     { path: "/device", label: "CÀI ĐẶT" },
   ];
