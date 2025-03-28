@@ -43,6 +43,7 @@ public class WaterMqttService {
     public void publish(String message) throws MqttException {
         // The topic for Adafruit IO MQTT is in the form: username/feeds/waterkey
         String topic = username + "/feeds/" + waterKey;
+
         MqttMessage mqttMessage = new MqttMessage(message.getBytes());
         mqttMessage.setQos(1); // Quality of Service level 1
         client.publish(topic, mqttMessage);
