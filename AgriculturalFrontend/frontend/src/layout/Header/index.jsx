@@ -227,9 +227,6 @@
 
 // export default Header;
 
-
-
-
 // File: src/layout/Header/index.jsx
 
 import React, { useState } from "react";
@@ -267,7 +264,7 @@ const Header = () => {
     { path: "/", label: "TRANG CHỦ" },
     { path: "/about", label: "VỀ SMARTGROW" },
     { path: "/dashboard", label: "DASHBOARD" }, // Thêm
-    // { path: "/schedule", label: "LÊN LỊCH" },
+    { path: "/schedule", label: "LÊN LỊCH" },
     // { path: "/settings", label: "CÀI ĐẶT" }, // Thêm
     { path: "/device", label: "CÀI ĐẶT" },
   ];
@@ -330,7 +327,7 @@ const Header = () => {
           </div> */}
           <div>
             <div className="container d-flex justify-content-end py-1 gap-2">
-            {/* Chọn ngôn ngữ */}
+              {/* Chọn ngôn ngữ */}
               <div className="d-flex gap-2 align-items-center">
                 <button
                   className={cx("wrapper_language", "btn", "btn-link", "p-0")}

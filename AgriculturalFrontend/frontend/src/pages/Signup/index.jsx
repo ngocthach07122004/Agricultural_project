@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
+import farm1 from "../../assets/farm1.jpg";
+import farm2 from "../../assets/farm2.jpg";
 
 // Schema validation với Yup
 const signupSchema = Yup.object().shape({
@@ -54,7 +56,7 @@ const Signup = () => {
       maTaiKhoan: "user",
     };
 
-    fetch("http://localhost:8081/user/create", {
+    fetch("http://localhost:8080/user/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -70,7 +72,13 @@ const Signup = () => {
   };
 
   return (
-    <div className={"container_signup"}>
+    <div
+      className={"container_signup"}
+      style={{
+        backgroundImage: `url(${farm2})`,
+        backgroundSize: "cover",
+      }}
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="container-fluid d-flex flex-column align-items-center">
           {/* <h2>Sign up</h2> */}
