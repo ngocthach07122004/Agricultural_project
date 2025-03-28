@@ -20,5 +20,5 @@ public class Light {
     @Id
     String idLight		;
     LocalDateTime time;
-    int valueLight;
+    String valueLight;
 }

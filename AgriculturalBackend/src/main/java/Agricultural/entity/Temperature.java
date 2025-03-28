@@ -20,5 +20,5 @@ public class Temperature {
     @Id
     String idTemperature		;
     LocalDateTime time;
-    int valueTemperature;
+    String valueTemperature;
 }

@@ -1,19 +1,24 @@
 package Agricultural.service;
 
+import Agricultural.entity.AirHumidity;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Service
 public class AirMoistureMqttService {
+    @Autowired
+    private AirHumidityService airHumidityService;
 
     // Inject your Adafruit IO username and key from application.properties
     @Value("${adafruit.username}")
@@ -62,21 +67,37 @@ public class AirMoistureMqttService {
             System.out.println("Received message on air-moisture feed: " + payload);
 
             // Optionally, prepend a timestamp
+//            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+//            String lineToWrite = timestamp + " - " + payload;
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//            LocalDate timestampConvert = LocalDate.parse(timestamp, formatter);
+////            System.out.println( "CHECK" +  timestamp);
+////            System.out.println( "CHECK" + lineToWrite);
+//            AirHumidity airHumidity = AirHumidity.builder().time(timestampConvert).build();
+
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             String lineToWrite = timestamp + " - " + payload;
-            System.out.println( "CHECK" +  timestamp);
-            System.out.println( "CHECK" + lineToWrite);
+
+// Định dạng đúng để parse timestamp
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+// Chuyển đổi trực tiếp thành LocalDateTime
+            LocalDateTime timestampConvert = LocalDateTime.parse(timestamp, formatter);
+
+// Tạo đối tượng AirHumidity
+            AirHumidity airHumidity = AirHumidity.builder().time(timestampConvert).valueAirHumidity(payload).build();
+            airHumidityService.createAirHumidity(airHumidity);
             // Append the payload to a text file
-            try {
-                Files.writeString(
-                        FEED_DATA_FILE,
-                        lineToWrite + System.lineSeparator(),
-                        StandardOpenOption.CREATE,  // create file if not exists
-                        StandardOpenOption.APPEND   // append to the file
-                );
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Files.writeString(
+//                        FEED_DATA_FILE,
+//                        lineToWrite + System.lineSeparator(),
+//                        StandardOpenOption.CREATE,  // create file if not exists
+//                        StandardOpenOption.APPEND   // append to the file
+//                );
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         });
     }
     /**

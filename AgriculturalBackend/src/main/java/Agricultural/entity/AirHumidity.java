@@ -20,5 +20,5 @@ public class AirHumidity {
     @Id
     String idAirHumidity		;
     LocalDateTime time;
-    int valueAirHumidity;
+    String valueAirHumidity;
 }

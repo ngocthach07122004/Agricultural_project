@@ -20,6 +20,6 @@ public class LandHumidity {
     @Id
     String idLandHumidity		;
     LocalDateTime time;
-    int valueLandHumidity;
+    String valueLandHumidity;
     
 }
