@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Space, Table, Tag, Modal, Button, Descriptions } from "antd";
-// import CreateFeedbackForm from "../../components/CreateFeedbackForm/index";
+// import CreateFeedbackForm from "../../components/CreateFeedbackFor
+// m/index";
+import "./styles.scss";
 
 const Profile = () => {
   const [userData, setUserData] = useState({});
@@ -211,7 +213,7 @@ const Profile = () => {
                 <div className="card-body">
                   <div className="row">
                     <div className="col-sm-3">
-                      <p className="mb-0">User name</p>
+                      <p className="mb-0 wrapper_information">User name</p>
                     </div>
                     <div className="col-sm-9">
                       <p className="text-muted mb-0">{userData.userName}</p>
