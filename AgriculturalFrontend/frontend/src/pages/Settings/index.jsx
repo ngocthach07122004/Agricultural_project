@@ -122,8 +122,8 @@ const SettingsPage = () => {
             <input
               type="range"
               className="form-range"
-              min="10"
-              max="90"
+              min="1"
+              max="10"
               value={lightLevel}
               onChange={(e) => {
                 const lvl = parseInt(e.target.value);
