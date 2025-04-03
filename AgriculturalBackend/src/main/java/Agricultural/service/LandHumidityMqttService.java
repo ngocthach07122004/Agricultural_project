@@ -1,6 +1,7 @@
 package Agricultural.service;
 
-import Agricultural.entity.AirHumidity;
+
+import Agricultural.entity.LandHumidity;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.eclipse.paho.client.mqttv3.*;
@@ -9,14 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+
 import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Service
-public class AirMoistureMqttService {
+public class LandHumidityMqttService {
     @Autowired
-    private AirHumidityDataService airHumidityService;
+    private LandHumidityDataService landHumidityService;
 
     // Inject your Adafruit IO username and key from application.properties
     @Value("${adafruit.username}")
@@ -43,8 +45,7 @@ public class AirMoistureMqttService {
     public void init() throws MqttException {
         // MQTT broker URL for Adafruit IO with TLS on port 8883
         String brokerUrl = "ssl://io.adafruit.com:8883";
-            String clientId  = username + "-air-moisture-service";
-
+            String clientId  = username + "-dirt-moisture-service";
 
         // Create an MQTT client with in-memory persistence
         client = new MqttClient(brokerUrl, clientId, new MemoryPersistence());
@@ -72,20 +73,20 @@ public class AirMoistureMqttService {
 //            LocalDate timestampConvert = LocalDate.parse(timestamp, formatter);
 ////            System.out.println( "CHECK" +  timestamp);
 ////            System.out.println( "CHECK" + lineToWrite);
-//            AirHumidity airHumidity = AirHumidity.builder().time(timestampConvert).build();
+//            LandHumidity landHumidity = LandHumidity.builder().time(timestampConvert).build();
 
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             String lineToWrite = timestamp + " - " + payload;
 
-// Định dạng đúng để parse timestamp
+
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 // Chuyển đổi trực tiếp thành LocalDateTime
             LocalDateTime timestampConvert = LocalDateTime.parse(timestamp, formatter);
 
-// Tạo đối tượng AirHumidity
-            AirHumidity airHumidity = AirHumidity.builder().time(timestampConvert).valueAirHumidity(payload).build();
-            airHumidityService.createAirHumidity(airHumidity);
+// Tạo đối tượng LandHumidity
+            LandHumidity landHumidity = LandHumidity.builder().time(timestampConvert).valueLandHumidity(payload).build();
+            landHumidityService.createLandHumidity(landHumidity);
             // Append the payload to a text file
 //            try {
 //                Files.writeString(

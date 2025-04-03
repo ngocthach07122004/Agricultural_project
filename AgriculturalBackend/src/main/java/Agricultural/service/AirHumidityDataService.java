@@ -14,7 +14,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 
-public class AirHumidityService {
+public class AirHumidityDataService {
+
     AirHumidityRepository airHumidityRepository; 
     public AirHumidity createAirHumidity(AirHumidity airHumidity){
         return airHumidityRepository.save(airHumidity);
