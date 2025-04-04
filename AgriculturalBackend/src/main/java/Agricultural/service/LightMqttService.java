@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LightMqttService {
+    
 
     @Value("${adafruit.username}")
     private String username;
@@ -28,7 +29,11 @@ public class LightMqttService {
     public void init() throws MqttException {
         // Use secure connection (TLS) on port 8883
         String brokerUrl = "ssl://io.adafruit.com:8883";
-        String clientId = username + "-spring-boot-client";
+//        String clientId = username + "-spring-boot-client";
+
+     String clientId = username + "-spring-boot-client";
+//        String clientId = "spring-boot-client-" + System.currentTimeMillis();
+
         client = new MqttClient(brokerUrl, clientId, new MemoryPersistence());
 
         MqttConnectOptions connOpts = new MqttConnectOptions();

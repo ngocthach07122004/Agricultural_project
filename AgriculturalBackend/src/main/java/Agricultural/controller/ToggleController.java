@@ -1,5 +1,8 @@
 package Agricultural.controller;
 
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +15,16 @@ import Agricultural.service.LightMqttService;
 
 @RestController
 @RequestMapping("/lighttoggle")
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ToggleController {
+    //    @Autowired
+     LightMqttService mqttService;
 
-    private final LightMqttService mqttService;
 
-    @Autowired
-    public ToggleController(LightMqttService mqttService) {
-        this.mqttService = mqttService;
-    }
+//    public ToggleController(LightMqttService mqttService) {
+//        this.mqttService = mqttService;
+//    }
 
     @GetMapping("/{value}")
     public ResponseEntity<String> toggle(@PathVariable String value) {
