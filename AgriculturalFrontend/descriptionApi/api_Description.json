@@ -1,0 +1,104 @@
+{
+  "listApi": [
+    {
+      "request": {
+        "description": "get list data light-sensor",
+        "method": "Get",
+        "body": {},
+        "url": "http://localhost:8080/light/all",
+        "response": [
+          {
+            "idLight": "2f8897fa-7034-414d-947a-d367016d779f",
+            "time": "2025-04-04T16:04:41",
+            "valueLight": "50"
+          },
+          {
+            "idLight": "4938524a-9936-48c4-a8c1-7cabbb3912c8",
+            "time": "2025-04-04T16:04:47",
+            "valueLight": "52"
+          },
+          {
+            "idLight": "7552d30b-4e90-450a-9a4b-0a4c2a1d0902",
+            "time": "2025-04-04T16:04:43",
+            "valueLight": "51"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "description": "get list data airHumidity-sensor",
+        "method": "Get",
+        "body": {},
+        "url": "http://localhost:8080/airHumidity/all",
+        "response": [
+          {
+            "idAirHumidity": "090833f5-0e9c-4866-b33e-069ea5f0fe02",
+            "time": "2025-03-28T14:57:37",
+            "valueAirHumidity": "123"
+          },
+          {
+            "idAirHumidity": "36e26ab0-834c-4781-8ba9-3b9575ab7bc3",
+            "time": "2025-03-28T14:59:49",
+            "valueAirHumidity": "999"
+          },
+          {
+            "idAirHumidity": "895f5dd2-1c6f-496d-bead-a5cb2e60b9d8",
+            "time": "2025-03-28T14:57:35",
+            "valueAirHumidity": "21"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "description": "get list data landHumidity-sensor",
+        "method": "Get",
+        "body": {},
+        "url": "http://localhost:8080/landHumidity/all",
+        "response": [
+          {
+            "idLandHumidity": "1ea0cc8f-a9ee-48e2-a660-1eb2dc2df915",
+            "time": "2025-04-04T16:07:00",
+            "valueLandHumidity": "111"
+          },
+          {
+            "idLandHumidity": "526f0920-244a-44fb-ac2f-e1b8ab128e66",
+            "time": "2025-04-04T16:07:05",
+            "valueLandHumidity": "333"
+          },
+          {
+            "idLandHumidity": "93530d07-9680-4ad6-8588-d5a67b7d5974",
+            "time": "2025-04-04T16:07:03",
+            "valueLandHumidity": "222"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "description": "get list data temperature-sensor",
+        "method": "Get",
+        "body": {},
+        "url": "http://localhost:8080/temperature/all",
+        "response": [
+          {
+            "idTemperature": "0a1d24c9-6705-4e38-9fdc-bdc2de7e9ad3",
+            "time": "2025-04-04T16:03:21",
+            "valueTemperature": "40"
+          },
+          {
+            "idTemperature": "38773625-0172-4321-8e32-a40ea43df1f6",
+            "time": "2025-04-04T16:03:18",
+            "valueTemperature": "35"
+          },
+          {
+            "idTemperature": "c143e97a-3d0e-4de3-a4e8-2a09bcbd7814",
+            "time": "2025-04-04T16:03:13",
+            "valueTemperature": "30"
+          }
+        ]
+      }
+    }
+  ]
+}
