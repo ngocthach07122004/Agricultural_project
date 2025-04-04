@@ -12,9 +12,9 @@ SmartGrow is a software that helps control and automate devices that help care f
 
 # Technology used
 
--Backend: Language(Java), Framework(Spring)
--Frontend: Language(HTML-CSS,Javacsript), Framework(bootstrap), Library(React)
--Database: mysql
+- Backend: Language(Java), Framework(Spring)
+- Frontend: Language(HTML-CSS,Javacsript), Framework(bootstrap), Library(React)
+- Database: mysql
 
 # How to start
 
