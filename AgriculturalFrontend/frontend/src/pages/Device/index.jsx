@@ -257,7 +257,7 @@ function WeatherForecast () {
                 type="range"
                 className="form-range"
                 min="10"
-                max="90"
+                max="60"
                 value={lightLevel}
                 onChange={(e) => {
                   const lvl = parseInt(e.target.value);
