@@ -32,7 +32,7 @@ public class    TemperatureService {
      *       adafruit.air-moisture-feed=air-moisture
      *     then use @Value("${adafruit.air-moisture-feed}") here.
      */
-    private final String feedKey = "air-moisture";
+    private final String feedKey = "temperature";
 
     private MqttClient client;
 
@@ -43,7 +43,7 @@ public class    TemperatureService {
     public void init() throws MqttException {
         // MQTT broker URL for Adafruit IO with TLS on port 8883
         String brokerUrl = "ssl://io.adafruit.com:8883";
-            String clientId  = username + "-air-temp-service";
+            String clientId  = username + "-temperature-service";
 
         // Create an MQTT client with in-memory persistence
         client = new MqttClient(brokerUrl, clientId, new MemoryPersistence());

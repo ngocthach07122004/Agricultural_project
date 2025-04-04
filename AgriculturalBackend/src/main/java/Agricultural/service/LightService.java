@@ -33,7 +33,7 @@ public class LightService {
      *       adafruit.air-moisture-feed=air-moisture
      *     then use @Value("${adafruit.air-moisture-feed}") here.
      */
-    private final String feedKey = "air-moisture";
+    private final String feedKey = "light-sensor";
 
     private MqttClient client;
 
@@ -84,8 +84,8 @@ public class LightService {
             LocalDateTime timestampConvert = LocalDateTime.parse(timestamp, formatter);
 
 // Tạo đối tượng Light
-//            Light light  = Light.builder().time(timestampConvert).valueLight(payload).build();
-//            lightService.createLight(light);
+            Light light  = Light.builder().time(timestampConvert).valueLight(payload).build();
+            lightService.createLight(light);
             // Append the payload to a text file
 //            try {
 //                Files.writeString(

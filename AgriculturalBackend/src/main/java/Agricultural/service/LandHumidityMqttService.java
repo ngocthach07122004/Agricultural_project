@@ -34,7 +34,7 @@ public class LandHumidityMqttService {
      *       adafruit.air-moisture-feed=air-moisture
      *     then use @Value("${adafruit.air-moisture-feed}") here.
      */
-    private final String feedKey = "air-moisture";
+    private final String feedKey = "dirt-moisture";
 
     private MqttClient client;
 

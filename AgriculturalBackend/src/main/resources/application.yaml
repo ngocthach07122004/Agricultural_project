@@ -15,5 +15,5 @@ spring:
 adafruit:
   username: diavolo
   feed: lightkey
-  aio-key: aio_AnXx61cSx9X0H2v76WrW92dOXFYY
+  aio-key: aio_XplU43KNI2HE0sFCB1nTJYkHeMei
   waterkey: waterkey
