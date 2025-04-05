@@ -111,6 +111,13 @@ public class LandHumidityMqttService {
         System.out.println("Published data to air-moisture feed: " + data);
     }
 
+//    private void connectIfNeeded() throws MqttException {
+//        if (client != null && !client.isConnected()) {
+//            System.out.println("MQTT client not connected. Attempting to reconnect...");
+//            client.connect(connOpts);
+//            System.out.println("Reconnected to Adafruit IO MQTT broker.");
+//        }
+//    }
     @PreDestroy
     public void disconnect() throws MqttException {
         if (client != null && client.isConnected()) {

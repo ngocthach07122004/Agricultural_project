@@ -18,25 +18,25 @@ function DevicePage() {
   // === Phần 1: Điều khiển thiết bị ===
   // State cho Bơm nước
   const [pumpOn, setPumpOn] = useState(false);
-  const [pumpLevel, setPumpLevel] = useState(5);
+  const [pumpLevel, setPumpLevel] = useState(0);
   // State cho Đèn
   const [lightOn, setLightOn] = useState(false);
-  const [lightLevel, setLightLevel] = useState(10);
+  const [lightLevel, setLightLevel] = useState(0);
   // State cho Quạt
   const [fanOn, setFanOn] = useState(false);
-  const [fanLevel, setFanLevel] = useState(5);
+  const [fanLevel, setFanLevel] = useState(0);
 
   // Hàm bật/tắt thiết bị
-  const toggleDevice = (device, status) => {
-    console.log(`Toggle ${device} ->`, status);
-    // Gọi API thật nếu cần
-  };
+  // const toggleDevice = (device, status) => {
+  //   console.log(`Toggle ${device} ->`, status);
+  //   // Gọi API thật nếu cần
+  // };
 
-  // Hàm chỉnh cường độ
-  const setDeviceLevel = (device, level) => {
-    console.log(`Level ${device} ->`, level);
-    // Gọi API thật nếu cần
-  };
+  // // Hàm chỉnh cường độ
+  // const setDeviceLevel = (device, level) => {
+  //   console.log(`Level ${device} ->`, level);
+  //   // Gọi API thật nếu cần
+  // };
 
   // === Phần 2: Đặt lịch (Schedule) ===
   const [scheduleDate, setScheduleDate] = useState(new Date());
@@ -46,6 +46,42 @@ function DevicePage() {
   const [scheduleAction, setScheduleAction] = useState("on");
 
   const [schedules, setSchedules] = useState([]);
+
+  useEffect(() => {
+    const convertLevel = pumpLevel * 10;
+    const urlWaterPump = `http://localhost:8080/water/${convertLevel}`;
+
+    fetch(urlWaterPump, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }, [pumpLevel]);
+
+  useEffect(() => {
+    const convertLevel = fanLevel * 10;
+    const urlWaterPump = `http://localhost:8080/fan/${convertLevel}`;
+
+    fetch(urlWaterPump, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }, [fanLevel]);
+
+  useEffect(() => {
+    const convertLevel = lightLevel * 25;
+    const urlWaterPump = `http://localhost:8080/light/${convertLevel}`;
+
+    fetch(urlWaterPump, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }, [lightLevel]);
 
   // Lưu lịch (với kiểm tra giờ kết thúc > giờ bắt đầu)
   const handleSaveSchedule = () => {
@@ -127,7 +163,12 @@ function DevicePage() {
                   className={`big-toggle ${pumpOn ? "on" : "off"}`}
                   onClick={() => {
                     setPumpOn(!pumpOn);
-                    toggleDevice("pump", !pumpOn);
+                    // toggleDevice("pump", !pumpOn);
+                    if (!pumpOn) {
+                      setPumpLevel((prev) => prev);
+                    } else {
+                      setPumpLevel(0);
+                    }
                   }}
                 >
                   {pumpOn ? "ON" : "OFF"}
@@ -135,12 +176,17 @@ function DevicePage() {
               </div>
               <div className="mb-2 slider-label">Cường độ: {pumpLevel}</div>
               <Slider
-                min={1}
+                min={0}
                 max={10}
                 value={pumpLevel}
-                onChange={(val) => {
-                  setPumpLevel(val);
-                  setDeviceLevel("pump", val);
+                onChange={(value) => {
+                  setPumpLevel(value);
+                  if (value !== 0) {
+                    setPumpOn(true);
+                  } else {
+                    setPumpOn(false);
+                  }
+                  // setDeviceLevel("pump", val);
                 }}
                 trackStyle={{ backgroundColor: "#4caf50", height: 8 }}
                 handleStyle={{
@@ -167,7 +213,12 @@ function DevicePage() {
                   className={`big-toggle ${lightOn ? "on" : "off"}`}
                   onClick={() => {
                     setLightOn(!lightOn);
-                    toggleDevice("light", !lightOn);
+                    if (!lightOn) {
+                      setLightLevel((prev) => prev);
+                    } else {
+                      setLightLevel(0);
+                    }
+                    // toggleDevice("light", !lightOn);
                   }}
                 >
                   {lightOn ? "ON" : "OFF"}
@@ -175,12 +226,16 @@ function DevicePage() {
               </div>
               <div className="mb-2 slider-label">Cường độ: {lightLevel}</div>
               <Slider
-                min={1}
-                max={10}
+                min={0}
+                max={4}
                 value={lightLevel}
-                onChange={(val) => {
-                  setLightLevel(val);
-                  setDeviceLevel("light", val);
+                onChange={(value) => {
+                  setLightLevel(value);
+                  if (value !== 0) {
+                    setLightOn(true);
+                  } else {
+                    setLightOn(false);
+                  }
                 }}
                 trackStyle={{ backgroundColor: "#ffc107", height: 8 }}
                 handleStyle={{
@@ -207,7 +262,11 @@ function DevicePage() {
                   className={`big-toggle ${fanOn ? "on" : "off"}`}
                   onClick={() => {
                     setFanOn(!fanOn);
-                    toggleDevice("fan", !fanOn);
+                    if (!fanOn) {
+                      setFanLevel((prev) => prev);
+                    } else {
+                      setFanLevel(0);
+                    }
                   }}
                 >
                   {fanOn ? "ON" : "OFF"}
@@ -215,12 +274,16 @@ function DevicePage() {
               </div>
               <div className="mb-2 slider-label">Cường độ: {fanLevel}</div>
               <Slider
-                min={1}
+                min={0}
                 max={10}
                 value={fanLevel}
-                onChange={(val) => {
-                  setFanLevel(val);
-                  setDeviceLevel("fan", val);
+                onChange={(value) => {
+                  setFanLevel(value);
+                  if (value !== 0) {
+                    setFanOn(true);
+                  } else {
+                    setFanOn(false);
+                  }
                 }}
                 trackStyle={{ backgroundColor: "#2196f3", height: 8 }}
                 handleStyle={{

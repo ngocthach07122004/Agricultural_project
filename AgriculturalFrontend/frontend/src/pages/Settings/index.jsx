@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.scss";
 
 // Icon ví dụ
@@ -13,7 +13,7 @@ import { FaFan } from "react-icons/fa";
 const SettingsPage = () => {
   // State cho các thiết bị
   const [pumpOn, setPumpOn] = useState(false);
-  const [pumpLevel, setPumpLevel] = useState(5);
+  const [pumpLevel, setPumpLevel] = useState(1);
 
   const [lightOn, setLightOn] = useState(false);
   const [lightLevel, setLightLevel] = useState(10);
@@ -25,6 +25,21 @@ const SettingsPage = () => {
   const [timerDevice, setTimerDevice] = useState("pump");
   const [timerAction, setTimerAction] = useState("on");
   const [timerDatetime, setTimerDatetime] = useState("");
+
+  // useEffect(() => {
+  //   const urlWaterPump = `http://localhost:8080/water/${pumpLevel}`;
+  //   console.log("123");
+  //   fetch(urlWaterPump, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log("success");
+  //     });
+  // }, [pumpLevel]);
 
   // Hàm bật/tắt thiết bị
   const toggleDevice = (device, status) => {
@@ -67,6 +82,7 @@ const SettingsPage = () => {
                 id="pumpSwitch"
                 checked={pumpOn}
                 onChange={(e) => {
+                  console.log("123");
                   setPumpOn(e.target.checked);
                   toggleDevice("pump", e.target.checked);
                 }}
@@ -86,8 +102,9 @@ const SettingsPage = () => {
               value={pumpLevel}
               onChange={(e) => {
                 const lvl = parseInt(e.target.value);
+                console.log(lvl);
                 setPumpLevel(lvl);
-                setDeviceLevel("pump", lvl);
+                // setDeviceLevel("pump", lvl);
               }}
             />
           </div>
