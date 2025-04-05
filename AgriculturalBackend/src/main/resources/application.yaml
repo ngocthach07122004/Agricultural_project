@@ -4,10 +4,10 @@ spring:
   application:
     name: agricultural-service
   datasource:
-#    url: "jdbc:mysql://localhost:3312/agricultural_database"
-#    driverClassName: "com.mysql.cj.jdbc.Driver"
-#    username: root
-#    password: 12345678
+    #    url: "jdbc:mysql://localhost:3312/agricultural_database"
+    #    driverClassName: "com.mysql.cj.jdbc.Driver"
+    #    username: root
+    #    password: 12345678
     url: jdbc:mysql://key:23641/agriculture?ssl-mode=REQUIRED
     driverClassName: "com.mysql.cj.jdbc.Driver"
     username: key
@@ -20,4 +20,6 @@ adafruit:
   username: key
   feed: key
   aio-key: key_in_here
-  waterkey: key
+  water-pump: water-pump
+  light: light
+  fan: fan
