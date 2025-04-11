@@ -1,14 +1,9 @@
-
 server:
   port: 8080
 spring:
   application:
     name: agricultural-service
   datasource:
-    #    url: "jdbc:mysql://localhost:3312/agricultural_database"
-    #    driverClassName: "com.mysql.cj.jdbc.Driver"
-    #    username: root
-    #    password: 12345678
     url: jdbc:mysql://key:23641/agriculture?ssl-mode=REQUIRED
     driverClassName: "com.mysql.cj.jdbc.Driver"
     username: key
@@ -24,28 +19,3 @@ adafruit:
   water-pump: water-pump
   light: light
   fan: fan
-#server:
-#  port: 8080
-#spring:
-#  application:
-#    name: agricultural-service
-#  datasource:
-#    #    url: "jdbc:mysql://localhost:3312/agricultural_database"
-#    #    driverClassName: "com.mysql.cj.jdbc.Driver"
-#    #    username: root
-#    #    password: 12345678
-#    url: jdbc:mysql://agriculture-d2025-huynhngocthach2004-98cb.f.aivencloud.com:23641/agriculture?ssl-mode=REQUIRED
-#    driverClassName: "com.mysql.cj.jdbc.Driver"
-#    username: avnadmin
-#    password: AVNS_DzhuUs_SAKgbuqpL1ne
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#adafruit:
-#  username: diavolo
-#  feed: lightkey
-#  aio-key: aio_PhWa00TJqtuAbyYOg609QQYvLaao
-#  water-pump: water-pump
-#  light: light
-#  fan: fan
