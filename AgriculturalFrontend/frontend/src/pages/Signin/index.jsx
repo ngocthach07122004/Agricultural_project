@@ -17,7 +17,7 @@ const Signin = (props) => {
       userName: username,
       password: password,
     };
-    console.log(payload);
+    // console.log(payload);
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
