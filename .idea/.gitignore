@@ -1,12 +1,22 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-/venv
+# Virtual environments
+venv/
+.env/
+.venv/
 
-# Python cache files
+# VSCode
+.vscode/
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Python cache
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
 
 # TensorBoard logs
 tensorboard/
@@ -14,15 +24,15 @@ tensorboard/
 # Trained models
 trained_models/
 
-# IDE-specific files
-.idea/
-*.iml
-
-# Temporary files
-*.tmp
+# Log and temp files
 *.log
+*.tmp
 *.bak
 *.swp
+
+# System files
 .DS_Store
 Thumbs.db
 
+# Git ignore itself
+.gitignore
