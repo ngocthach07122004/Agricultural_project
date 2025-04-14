@@ -58,10 +58,10 @@ function FruitQuality() {
       <div className={cx("section")}>
         <div className={cx("title")}>
           <FaAppleAlt className={cx("iconHeader")} />
-          Fruit Prediction
+          Dự đoán loại trái cây
         </div>
         <div className={cx("description")}>
-          <FaCheckCircle color="#2ecc71" /> Result:{" "}
+          <FaCheckCircle color="#2ecc71" /> Kết quả:{" "}
           <strong>{response.fruit.prediction}</strong> (
           <FaPercent /> {response.fruit.confidence.toFixed(2)}%)
         </div>
@@ -85,7 +85,7 @@ function FruitQuality() {
           ) : (
             <FaThumbsDown className={cx("iconHeader")} />
           )}
-          Quality Prediction
+          Dự đoán chất lượng
         </div>
         <div className={cx("description")}>
           {response.quality.prediction === "Good" ? (
@@ -93,7 +93,7 @@ function FruitQuality() {
           ) : (
             <FaExclamationCircle color="#e74c3c" />
           )}{" "}
-          Result:{" "}
+          Kết qủa :{" "}
           <strong
             style={{
               color:
