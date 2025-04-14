@@ -9,6 +9,8 @@ import Dashboard from "../pages/Dashboard";
 import Settings from "../pages/Settings";
 import Schedule from "../pages/Schedule"; // Import trang Schedule
 import Device from "../pages/Device";
+import FruitQuality from "../pages/FruitQuality";
+import LeafMango from "../pages/LeafMango";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +24,9 @@ const router = createBrowserRouter([
       { path: "dashboard", element: <Dashboard /> },
       { path: "settings", element: <Settings /> },
       { path: "schedule", element: <Schedule /> }, // Thêm route cho Schedule
-      { path: "device", element: <Device/>},
+      { path: "device", element: <Device /> },
+      { path: "fruitQuality", element: <FruitQuality /> },
+      { path: "leafMango", element: <LeafMango /> },
     ],
   },
 ]);
