@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84df01b0-9689-4991-88e2-b55aeee59219" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/Fruit-Quality/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/Fruit-Quality/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/MangoLeaf/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/AI/MangoLeaf/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/MangoLeaf/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/MangoLeaf/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/Fruit-Quality" beforeDir="false" afterPath="$PROJECT_DIR$/AI/Fruit-Quality" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/Fruit-Quality/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/Fruit-Quality/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/Fruit-Quality/train_cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI/Fruit-Quality/train_cnn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AgriculturalBackend/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/AgriculturalBackend/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/FruitQuality/FruitQuality.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/FruitQuality/FruitQuality.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/FruitQuality/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/FruitQuality/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/LeafMango/LeafMango.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/LeafMango/LeafMango.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/LeafMango/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/AgriculturalFrontend/frontend/src/pages/LeafMango/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
